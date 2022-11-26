@@ -1,13 +1,24 @@
+import { useRef } from "react";
 import styled from "styled-components/macro";
 
-const TodoForm = () => {
+const TodoForm = ({ addTodo }) => {
+  const inputRef = useRef(null);
+
   const handleSubmit = (evn) => {
     evn.preventDefault();
+
+    addTodo(inputRef.current.value);
+    inputRef.current.value = "";
   };
 
   return (
     <Wrapper onSubmit={handleSubmit}>
-      <input type="text" className="input" placeholder="Add new list item" />
+      <input
+        type="text"
+        className="input"
+        placeholder="Add new list item"
+        ref={inputRef}
+      />
       <button className="btn" type="submit">
         Add
       </button>
@@ -17,9 +28,10 @@ const TodoForm = () => {
 
 const Wrapper = styled.form`
   width: 100%;
-  height: 58px;
+  height: max-content;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+
   gap: 10px;
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -37,7 +49,7 @@ const Wrapper = styled.form`
   }
 
   .btn {
-    width: 84px;
+    width: 100%;
     height: 44px;
     border: none;
     border-radius: 4px;
@@ -51,6 +63,17 @@ const Wrapper = styled.form`
 
   .btn:hover {
     background-color: var(--btn-hover);
+  }
+
+  @media (min-width: 414px) {
+    & {
+      flex-direction: row;
+      align-items: center;
+
+      .btn {
+        width: 84px;
+      }
+    }
   }
 `;
 

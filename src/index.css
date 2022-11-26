@@ -11,6 +11,7 @@
   --todo-done: #8f98a8;
   --bg: #f5f5f5;
   --white: #fff;
+  --blue-opacity: rgba(0, 23, 71, 0.15);
 
   --transition-all: all 0.2s linear;
 }

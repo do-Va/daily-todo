@@ -10,8 +10,9 @@ function App() {
 }
 
 const Wrapper = styled.div`
-  height: 100%;
+  min-height: 100%;
   background-color: var(--bg);
+  padding: 40px 0;
 `;
 
 export default App;
