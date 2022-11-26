@@ -4,6 +4,6 @@ const TodoContent = () => {
   return <Wrapper>Container</Wrapper>;
 };
 
-const Wrapper = styled.section``;
+const Wrapper = styled.div``;
 
 export default TodoContent;

@@ -4,6 +4,6 @@ const TodoFooter = () => {
   return <Wrapper>Container</Wrapper>;
 };
 
-const Wrapper = styled.section``;
+const Wrapper = styled.footer``;
 
 export default TodoFooter;
